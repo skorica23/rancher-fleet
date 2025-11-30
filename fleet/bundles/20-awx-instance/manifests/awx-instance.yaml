@@ -1,5 +1,5 @@
 apiVersion: awx.ansible.com/v1beta1
-kind: awx
+kind: AWX
 metadata:
   name: awx
 spec:
