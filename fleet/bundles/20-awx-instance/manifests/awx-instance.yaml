@@ -4,10 +4,7 @@ kind: AWX
 metadata:
   name: awx
 spec:
-  #admin_user: admin
-  #admin_paswwrd: awx-admin-Secret
-
-  #enable ingress
+   #enable ingress
   ingress_type: ingress 
 
 hostanme: ansible.local
@@ -16,7 +13,7 @@ service_type: ClusterIP
 
 #Ingress annotation for traefik (RKE2 default)
 ingress_annotations:
-  kubernetes.ioingress_class: traefik
+  kubernetes.io/ingress_class: traefik
   traefik.ingress.kubernetes.io/router.entrypoints: web
 
   postgres_storage_class: local-path
