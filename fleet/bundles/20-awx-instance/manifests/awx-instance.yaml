@@ -7,14 +7,14 @@ spec:
    #enable ingress
   ingress_type: ingress 
 
-hostanme: ansible.local
+  hostanme: ansible.local
 
-service_type: ClusterIP
+  service_type: ClusterIP
 
-#Ingress annotation for traefik (RKE2 default)
-ingress_annotations:
-  kubernetes.io/ingress_class: traefik
-  traefik.ingress.kubernetes.io/router.entrypoints: web
+  #Ingress annotation for traefik (RKE2 default)
+  ingress_annotations:
+    kubernetes.io/ingress_class: traefik
+    traefik.ingress.kubernetes.io/router.entrypoints: web
 
-  postgres_storage_class: local-path
-  postgres_data_volume_size: 5Gi
+    postgres_storage_class: local-path
+    postgres_data_volume_size: 5Gi
