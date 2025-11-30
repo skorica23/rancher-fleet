@@ -8,7 +8,7 @@ helm:
   chart: awx-operator
   version: 3.2.0
   targetCustomizations:
-   - name: default
+   - name: local
      clusterSelector:
        matchLabels:
          environment: rke2
