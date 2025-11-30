@@ -1,12 +1,15 @@
 ---
-
-#namespace: awx-operator
-helm:
-  takeOwnership: true
-  releaseName: awx-operator
-  repo: https://ansible-community.github.io/awx-operator-helm
-  chart: awx-operator
-  version: 3.2.0
+apiVersion: fleet.cattle.io/v1alpha1
+kind: Bundle
+metadata:
+  name: awx-operator
+spec:
+  helm:
+    takeOwnership: true
+    releaseName: awx-operator
+    repo: https://ansible-community.github.io/awx-operator-helm
+    chart: awx-operator
+    version: 3.2.0
   # targetCustomizations:
   #  - name: local
   #    clusterSelector:
