@@ -6,7 +6,7 @@ helm:
   releaseName: awx-operator
   repo: https://ansible-community.github.io/awx-operator-helm
   chart: awx-operator
-    version: 3.2.0
+  version: 3.2.0
   targetCustomizations:
    - name: default
      clusterSelector:
