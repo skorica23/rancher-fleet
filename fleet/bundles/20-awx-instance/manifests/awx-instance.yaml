@@ -3,6 +3,7 @@ apiVersion: awx.ansible.com/v1beta1
 kind: AWX
 metadata:
   name: awx-instance
+  namespace: awx
 spec:
   
    #enable ingress
