@@ -4,6 +4,7 @@ kind: Bundle
 metadata:
   name: awx-operator
 spec:
+  defaultNamespace: awx-operator
   helm:
     takeOwnership: true
     releaseName: awx-operator
