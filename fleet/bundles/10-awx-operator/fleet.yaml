@@ -17,11 +17,11 @@ spec:
     chart: awx-operator
     version: 3.2.0
     installCrds: true
-  # targetCustomizations:
-  #  - name: local
-  #    clusterSelector:
-  #      matchLabels:
-  #        environment: rke2
-  # valuessFiles:
-  #    - values.yaml
+    targetCustomizations:
+    #- name: local
+      - clusterSelector:
+          matchLabels:
+            environment: rke2
+    #valuessFiles:
+    #  - values.yaml
     
