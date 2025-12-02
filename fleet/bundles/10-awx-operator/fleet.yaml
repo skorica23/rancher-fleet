@@ -5,13 +5,20 @@ metadata:
   name: awx-operator
 spec:
   helm:
-    takeOwnership: true
+    namespace: awx-operator
     releaseName: awx-operator
+    takeOwnership: true
     chart: awx-operator
     repo: https://ansible-community.github.io/awx-operator-helm/
     version: 3.2.0
     installCrds: true
-defaultNamespace: awx-operator 
-#targetNamespace: awx-operator
+
 targets:
-- {}    
+- {}
+
+
+
+#defaultNamespace: awx-operator 
+#targetNamespace: awx-operator
+#targets:
+#- 
