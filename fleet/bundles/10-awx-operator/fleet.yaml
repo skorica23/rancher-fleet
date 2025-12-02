@@ -11,7 +11,7 @@ spec:
   #resources:
    # - manifests/
   helm:
-    takeOwnership: true
+    takeOwnership: false
     releaseName: awx-operator
     repo: https://ansible-community.github.io/awx-operator-helm/
     chart: awx-operator
