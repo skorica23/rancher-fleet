@@ -7,9 +7,8 @@ spec:
   #clusterScope: true
 
   defaultNamespace: awx-operator
-  targetNamespace: awx-operator
-  #resources:
-   # - manifests/
+  #targetNamespace: awx-operator
+  
   helm:
     takeOwnership: true
     releaseName: awx-operator
