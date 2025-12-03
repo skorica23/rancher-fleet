@@ -3,6 +3,7 @@ name: awx-operator-wrapper
 version: 0.1.0
 dependencies:
   - name: awx-operator
+    releaseName: awx-operator
     namespace: awx-operator
     version: 3.2.0
     repository: https://ansible-community.github.io/awx-operator-helm/
