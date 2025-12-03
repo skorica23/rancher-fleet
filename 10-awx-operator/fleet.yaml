@@ -5,7 +5,7 @@ metadata:
 spec:
 
   defaultNamespace: awx-operator
-  targetnamespace: awx-operator
+  targetNamespace: awx-operator
 
   helm:
     chart: awx-operator
@@ -14,7 +14,7 @@ spec:
     releaseName: awx-operator-test
     namespace: awx-operator
     installCrds: true
-    #takeOwnership: true
+    takeOwnership: true
 
   targets:
     - {}
