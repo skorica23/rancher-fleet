@@ -1,0 +1,10 @@
+---
+apiVersion: fleet.cattle.io/v1alpha1
+kind: Bundle
+metadata:
+  name: awx-instance-1
+spec:
+  defaultNamespace: awx
+  targetNamespace: awx
+  resources:
+    - manifests/

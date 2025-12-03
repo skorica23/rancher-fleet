@@ -1,0 +1,22 @@
+---
+apiVersion: awx.ansible.com/v1beta1
+kind: AWX
+metadata:
+  name: awx-instance
+  namespace: awx
+spec:
+  
+   #enable ingress
+  ingress_type: ingress 
+
+  hostname: ansible.local
+
+  service_type: ClusterIP
+
+  #Ingress annotation for traefik (RKE2 default)
+  ingress_annotations: |
+    kubernetes.io/ingress_class: traefik
+    traefik.ingress.kubernetes.io/router.entrypoints: web
+
+  postgres_storage_class: local-path
+  postgres_data_volume_size: 5Gi
