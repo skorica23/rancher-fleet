@@ -1,5 +1,5 @@
 apiVersion: v2
-name: awx-operator-wrapper
+#name: awx-operator-wrapper
 version: 0.1.0
 dependencies:
   - name: awx-operator
