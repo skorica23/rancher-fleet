@@ -9,7 +9,7 @@ spec:
 
   helm:
     chart: awx-operator
-    repo: https://ansible-community.github.io/awx-operator-helm/
+    repo: https://github.com/ansible-community/awx-operator-helm/tree/main/charts/awx-operator #ansible-community.github.io/awx-operator-helm/
     version: "3.2.0"
     releaseName: awx-operator-test
     namespace: awx-operator
