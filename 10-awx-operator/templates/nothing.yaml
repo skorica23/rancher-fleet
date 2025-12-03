@@ -1,0 +1,11 @@
+# This file exists so that Fleet and Helm accept this directory as a chart.
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: awx-operator-placeholder
+data:
+  placeholder: "true"
+# apiVersion: v1
+# kind: Namespace
+# metadata:
+#   name: awx-operator
