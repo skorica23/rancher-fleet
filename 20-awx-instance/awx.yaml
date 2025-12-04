@@ -2,7 +2,7 @@ apiVersion: awx.ansible.com/v1beta1
 kind: AWX
 metadata:
   name: awx-instance
-  namespace: awx-operator
+  namespace: awx
 spec:
   replicas: 2
 
@@ -19,3 +19,11 @@ spec:
   # Basic resource settings
   web_replicas: 2
   task_replicas: 2
+ 
+  pg_capacity: 10Gi
+  postgres_database:: awx
+  # pv and pvc assigment:
+  volumes:
+    - name: awx-postgres-volumes
+      persistentVolumeClaim:
+        claimName: awx-postgres-pvc

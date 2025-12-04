@@ -1,4 +1,4 @@
-defaultNamespace: awx-operator
+defaultNamespace: awx
 
 # No helm section needed — we deploy plain Kubernetes YAML
 targets:
