@@ -1,28 +1,19 @@
 # /fleet/fleet.yaml
 apiVersion: fleet.cattle.io/v1beta1
-kind: GitRepo
+kind: Bundle
 metadata:
   name: awx-deployment
 spec:
-  gitRepo: 
-    url: "git@github.com:skorica23/fleet.git"
-  path: "/fleet"
-  syncPeriod: 1m
-  branch: main
-  targets:
-    - cluster: "*"
-      names: 
-        - "*"
-      resources:
+  resources:
         # Deploy AWX Operator
-        - name: awx-operator
-          kind: HelmChart
-          values:
-            # Specify custom values for the AWX Operator
-            #namespace: awx-operator
-            replicaCount: 1
-            image:
-              tag: stable
+    - name: awx-operator
+      kind: HelmChart
+      values:
+        # Specify custom values for the AWX Operator
+        #namespace: awx-operator
+        replicaCount: 1
+        image:
+        tag: stable
         # # Deploy AWX Instance
         # - name: awx-instance
         #   kind: HelmChart
