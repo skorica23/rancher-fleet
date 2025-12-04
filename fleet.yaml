@@ -2,7 +2,7 @@ namespace: awx-operator
 
 helm:
   releaseName: awx-operator
-  repo: "https://ansible.github.io/awx-operator/"
+  repo: "https://ansible-community.github.io/awx-operator-helm/"
   chart: "awx-operator"
   version: "2.17.0"        # Example version—update to whichever you need
 
