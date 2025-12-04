@@ -1,9 +1,8 @@
 replicaCount: 1
-
-image:
-  repository:  https://ansible-community.github.io/awx-operator-helm/
-  tag: stable
-
+#github.com/ansible/awx-operator/config/default?ref=0.21.0
+images:
+  - name: quay.io/ansible/awx-operator
+    tag:  2.19.0
 service:
   enabled: true
   type: ClusterIP
