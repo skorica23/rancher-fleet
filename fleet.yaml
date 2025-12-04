@@ -1,5 +1,5 @@
 # /fleet/fleet.yaml
-apiVersion: fleet.cattle.io/v1beta1
+apiVersion: fleet.cattle.io/v1alpha1
 kind: Bundle
 metadata:
   name: awx-deployment
@@ -13,7 +13,7 @@ spec:
         #namespace: awx-operator
         replicaCount: 1
         image:
-        tag: stable
+          tag: stable
         # # Deploy AWX Instance
         # - name: awx-instance
         #   kind: HelmChart
