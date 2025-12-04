@@ -1,4 +1,4 @@
-namespace: awx-operator
+defaultNamespace: awx-operator
 
 helm:
   releaseName: awx-operator
