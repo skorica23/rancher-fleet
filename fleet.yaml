@@ -1,27 +1,28 @@
-# /fleet/fleet.yaml
-apiVersion: fleet.cattle.io/v1alpha1
-kind: Bundle
-metadata:
-  name: awx-deployment
-spec:
-  resources:
-        # Deploy AWX Operator
-    - name: awx-operator
-      kind: HelmChart
-      values:
-        # Specify custom values for the AWX Operator
-        namespace: awx-operator
-        replicaCount: 1
-        image:
-          repository: quay.io/ansible/awx-operator
-          tag: 2.19.1
-        # # Deploy AWX Instance
-        # - name: awx-instance
-        #   kind: HelmChart
-        #   values:
-        #     #namespace: awx
-        #     awx:
-        #       host: "awx.example.com"
-        #       secret: "awx-secret"
-        #       admin_user: "admin"
-        #       admin_password: "password"  # Secure this in a secret
+namespace: awx-operator
+
+helm:
+  releaseName: awx-operator
+  repo: "https://ansible.github.io/awx-operator/"
+  chart: "awx-operator"
+  version: "2.17.0"        # Example version—update to whichever you need
+
+  force: false
+  timeoutSeconds: 300
+
+  values:
+    installCRDs: true
+    image:
+      repository: quay.io/ansible/awx-operator
+      tag: "2.17.0"
+    logLevel: DEBUG
+
+    # Example configuration to deploy an AWX instance
+    awx-operator:
+      enabled: true
+
+    awx:
+      enabled: true
+      spec:
+        ingress_type: none
+        route_tls_termination_mechanism: edge
+        replicas: 2

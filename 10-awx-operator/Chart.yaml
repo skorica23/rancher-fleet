@@ -1,7 +1,0 @@
-apiVersion: v2
-name: awx-operator
-#chart: awx-operator
-description: comunity  supported AWX operator helm chart
-type: application
-version: 3.2.0
-appVersion: 2.19.1
