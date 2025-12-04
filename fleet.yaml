@@ -10,7 +10,7 @@ spec:
       kind: HelmChart
       values:
         # Specify custom values for the AWX Operator
-        #namespace: awx-operator
+        namespace: awx-operator
         replicaCount: 1
         image:
           tag: stable
