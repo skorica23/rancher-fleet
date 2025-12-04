@@ -15,6 +15,8 @@ helm:
       repository: quay.io/ansible/awx-operator
       tag: "2.19.1"
     logLevel: DEBUG
+    #enable namespace watch to overwrite default  conf
+    watchNamespace: ""
 
     # # Example configuration to deploy an AWX instance
     # awx-operator:
