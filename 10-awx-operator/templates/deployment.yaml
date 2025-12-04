@@ -14,8 +14,8 @@ spec:
     spec:
       containers:
         - name: awx-operator
-          image: "{{ .Values.image.name }}:{{ .Values.image.tag }}"
+          image: "{{ .Values.images.repository }}:{{ .Values.images.tag }}"
           paths:
-            - containerPOrt: {{ .Values.service.port }}
+            - containerPort: {{ .Values.service.port }}
           resources:
             {{- toYaml .Values.resources | nindent 12 }}

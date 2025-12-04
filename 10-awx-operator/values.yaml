@@ -1,8 +1,9 @@
 replicaCount: 1
 #github.com/ansible/awx-operator/config/default?ref=0.21.0
 images:
-  - name: quay.io/ansible/awx-operator
-    tag:  2.19.0
+   repository: quay.io/ansible/awx-operator
+   tag: 2.19.1
+   pullPolicy: ifNotPresent
 service:
   enabled: true
   type: ClusterIP

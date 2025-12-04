@@ -13,7 +13,8 @@ spec:
         namespace: awx-operator
         replicaCount: 1
         image:
-          tag: stable
+          repository: quay.io/ansible/awx-operator
+          tag: 2.19.1
         # # Deploy AWX Instance
         # - name: awx-instance
         #   kind: HelmChart
