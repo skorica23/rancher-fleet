@@ -1,7 +1,7 @@
 replicaCount: 1
 
 image:
-  repository: ansible/awx-operator
+  repository:  https://ansible-community.github.io/awx-operator-helm/
   tag: stable
 
 service:
