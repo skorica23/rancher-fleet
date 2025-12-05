@@ -20,8 +20,8 @@ spec:
   web_replicas: 1
   task_replicas: 1
  
-  pg_capacity: 10Gi
-  postgres_database:: awx
+  # pg_capacity: 10Gi
+  # postgres_database:: awx
   # # pv and pvc assigment:
   # volumes:
   #   - name: awx-postgres-volumes
