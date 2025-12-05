@@ -19,7 +19,17 @@ spec:
   # Basic resource settings
   web_replicas: 1
   task_replicas: 1
- 
+  
+  affinity:
+    nodeAffinity:
+      requiredDuringSchedulingIgnoredDuringExecution:
+        nodeSelectorTerms:
+          - matchExpressions:
+              - key: kubernetes.io/hostname  # Example key
+                operator: In
+                values:
+                  - rke-node1  # List node names that should receive the pods
+                  #- node-2
   # pg_capacity: 10Gi
   # postgres_database:: awx
   # # pv and pvc assigment:
