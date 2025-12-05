@@ -4,8 +4,7 @@ metadata:
   name: awx-instance
   namespace: awx
 spec:
-  replicas: 2
-
+  replicas: 1
   # Disable ingress controller usage
   ingress_type: none
 
