@@ -21,7 +21,8 @@ ha:
       }
 
       storage {
-        path = "/mnt/data"
+        path = "/mnt/openbao"
+
       }
 
       service_registration "kubernetes" {}
