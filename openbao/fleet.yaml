@@ -22,8 +22,8 @@ helm:
         replicaCount: 3
 
         injector:
-          enabled: true       #this can be an internal service addres, which is the current case
-          externalVaultAddr: "https://openbao-ha-0.openbao-ha-internal:8201"
+          enabled: false       #this can be an internal service addres, which is the current case
+         # externalVaultAddr: "https://openbao-ha-0.openbao-ha-internal:8201"
         # Enable Integrated Storage (Raft) backend
         raft:
           enabled: true
