@@ -21,6 +21,9 @@ helm:
         # 3 OpenBao pods (HA cluster)
         replicaCount: 3
 
+        injector:
+          enabled: true       #this can be an internal service addres, which is the current case
+          externalVaultAddr: "https://openbao-ha-0.openbao-ha-internal:8201"
         # Enable Integrated Storage (Raft) backend
         raft:
           enabled: true
@@ -53,4 +56,5 @@ helm:
     # Optional: enable UI and expose via a ClusterIP service
     ui:
       enabled: true
-      serviceType: ClusterIP
+      serviceType: NodePort
+      serviceNodePort: 40000
