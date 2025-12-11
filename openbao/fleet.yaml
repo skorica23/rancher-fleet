@@ -14,52 +14,6 @@ helm:
   force: false
   timeoutSeconds: 600
 
-  values:
-    # OpenBao server configuration
-    server:
-
-      nodeSelector:
-           openbao-node: "true"
-        
-      affinity:
-        nodeAffinity:
-          requiredDuringSchedulingIgnoredDuringExecution:
-            nodeSelectorTerms:
-             - matchExpressions:
-               - key: openbao-node
-                 operator: Exists
-      ha:
-        enabled: true
-        # 3 OpenBao pods (HA cluster)
-        replicaCount: 3
-        
-   
-                 # Minimal Raft + listener config (no TLS; good for lab/dev)
-         # Adjust for production (enable TLS, auto-unseal, etc.)
-        config: |-
-            ui = false
-
-            listener "tcp" {
-              tls_disable     = 1
-              address         = "[::]:8200"
-              cluster_address = "[::]:8201"
-            }
-
-            storage "raft" {
-              path = "/mnt/data"
-            }
-
-            service_registration "kubernetes" {}
-      
-      # Persistent storage for Raft data
-      dataStorage:
-        enabled: true
-        size: 8Gi
-        # Adjust to your cluster storage class
-        storageClass: "local-path"
-
-    # Optional: enable UI and expose via a ClusterIP service
-    ui:
-      enabled: true
-      serviceType: NodePort
-      serviceNodePort: 32000
+  valuesFile:
+    - values.yaml
+    
