@@ -25,17 +25,17 @@ spec:
     requests:
       storage: 8Gi
   
-  # Use local-path for Task pods
-  task_storage_class: local-path
-  task_storage_requirements:
-    requests:
-      storage: 8Gi
+  # # Use local-path for Task pods
+  # task_storage_class: local-path
+  # task_storage_requirements:
+  #   requests:
+  #     storage: 8Gi
 
-  # Use local-path for Web UI pods
-  web_storage_class: local-path
-  web_storage_requirements:
-    requests:
-      storage: 8Gi
+  # # Use local-path for Web UI pods
+  # web_storage_class: local-path
+  # web_storage_requirements:
+  #   requests:
+  #     storage: 8Gi
 
 
   # affinity:
