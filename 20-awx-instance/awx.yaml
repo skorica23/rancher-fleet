@@ -13,7 +13,7 @@ spec:
 
   # You can optionally set NodePort manually (optional)
   nodeport_port: 30080
-  nodeport_tls_port: 30443
+  #nodeport_tls_port: 30443
 
   # Basic resource settings
   web_replicas: 1
