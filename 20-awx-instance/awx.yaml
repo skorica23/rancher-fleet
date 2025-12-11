@@ -19,16 +19,35 @@ spec:
   web_replicas: 1
   task_replicas: 1
   
-  affinity:
-    nodeAffinity:
-      requiredDuringSchedulingIgnoredDuringExecution:
-        nodeSelectorTerms:
-          - matchExpressions:
-              - key: kubernetes.io/hostname  # Example key
-                operator: In
-                values:
-                  - rke-node1  # List node names that should receive the pods
-                  #- node-2
+  #use local path for postgres data
+  postgres_storage_class: local-path
+  postgres_storage_requirements:
+    requests:
+      storage: 8Gi
+  
+  # Use local-path for Task pods
+  task_storage_class: local-path
+  task_storage_requirements:
+    requests:
+      storage: 8Gi
+
+  # Use local-path for Web UI pods
+  web_storage_class: local-path
+  web_storage_requirements:
+    requests:
+      storage: 8Gi
+
+
+  # affinity:
+  #   nodeAffinity:
+  #     requiredDuringSchedulingIgnoredDuringExecution:
+  #       nodeSelectorTerms:
+  #         - matchExpressions:
+  #             - key: kubernetes.io/hostname  # Example key
+  #               operator: In
+  #               values:
+  #                 - rke-node1  # List node names that should receive the pods
+  #                 #- node-2
   # pg_capacity: 10Gi
   # postgres_database:: awx
   # # pv and pvc assigment:
