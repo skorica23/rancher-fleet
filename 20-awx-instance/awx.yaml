@@ -19,8 +19,8 @@ spec:
   web_replicas: 1
   task_replicas: 1
   
-  #use local path for postgres data
-  postgres_storage_class: local-path
+   #use local path for postgres data
+  postgres_storage_class: awx-local-static
   postgres_storage_requirements:
     requests:
       storage: 8Gi
