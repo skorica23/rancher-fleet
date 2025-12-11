@@ -17,19 +17,6 @@ helm:
   values:
     # OpenBao server configuration
     server:
-      
-      podTemplate:
-        nodeSelector:
-          openbao-node: "true"
-        
-        affinity:
-          nodeAffinity:
-            requiredDuringSchedulingIgnoredDuringExecution:
-             nodeSelectorTerms:
-              - matchExpressions:
-                - key: openbao-node
-                  operator: Exists
-
       ha:
         enabled: true
         # 3 OpenBao pods (HA cluster)
@@ -59,7 +46,17 @@ helm:
             }
 
             service_registration "kubernetes" {}
-
+      podTemplate:
+        nodeSelector:
+          openbao-node: "true"
+        
+        affinity:
+          nodeAffinity:
+            requiredDuringSchedulingIgnoredDuringExecution:
+             nodeSelectorTerms:
+              - matchExpressions:
+                - key: openbao-node
+                  operator: Exists
       # Persistent storage for Raft data
       dataStorage:
         enabled: true
