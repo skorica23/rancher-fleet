@@ -21,7 +21,7 @@ server:
       enabled: true
       setNodeId: true
       config: |-
-        ui = true`
+        ui = true
 
         listener "tcp" {
           tls_disable     = 1
