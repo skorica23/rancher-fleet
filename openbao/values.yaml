@@ -1,8 +1,8 @@
 server:
 
   # Scheduling MUST be here, not under ha
-  nodeSelector:
-    openbao-node: "true"
+  #nodeSelector:
+   # openbao-node: "true"
 
   # affinity:
   #   nodeAffinity:
@@ -11,7 +11,9 @@ server:
   #       - matchExpressions:
   #           - key: openbao-node
   #             operator: Exists
-
+  podAnnotations:
+   fleet.cattle.io/restart: "{{ .Values.fleetForceRedeploy }}"
+  
   # HA + Raft config
   ha:
     enabled: true
