@@ -3,8 +3,8 @@ redeployOnModify: true
 helm:
   # Name of the Helm release
   releaseName: openbao-ha
-  takeOwnership: true
-  atomic: true 
+  #takeOwnership: true
+  #atomic: true 
   # OpenBao official Helm chart
   chart: openbao
   repo: https://openbao.github.io/openbao-helm
@@ -17,5 +17,5 @@ helm:
   valuesFiles:
     - values.yaml
     
-  vslues:
-    fleetForceRedeploy: "2025-01-18-01"
+  #vslues:
+   # fleetForceRedeploy: "2025-01-18-01"
