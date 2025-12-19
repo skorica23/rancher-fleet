@@ -1,4 +1,11 @@
+#configures OpenBao server pods -> how should  Openbao run?
 server:
+  securityContext:
+   runAsUser: 100
+   runAsGroup: 1000
+   fsGroup: 1000
+   fsGroupChangePolicy: "OnRootMismatch"
+   runAsNonRoot: true
 
   # Scheduling MUST be here, not under ha
   #nodeSelector:
@@ -16,35 +23,35 @@ server:
   
   # HA + Raft config
   ha:
-    enabled: true
+    enabled: true  #enables HA evailability mode, turns on HA logic in the helm chart, statefulset instead  of deployment, HA service creation
     replicaCount: 3
-
+    #raft storage backend config
     raft:
-      enabled: true
-      setNodeId: true
-      config: |-
-        ui = true
-
+      enabled: true #enables raft storage
+      setNodeId: true  #forces each pod to have a stable raft node ID, k8-ephemeral 
+      config: |-  #this is raw openbao config not helm yaml
+        ui = true #enables openabo ui inside the server 
+        #defines how bao listens for traffic tcp= http,https api 
         listener "tcp" {
-          tls_disable     = 1
-          address         = "[::]:8200"
+          tls_disable     = 1  
+          address         = "[::]:8200" #binds openbao to all ipv4 and ipv5 interfaces
          
         }
-
+        #defines raft as storage backend. filesystem location for raft data
         storage "raft" {
           path = "/openbao/data"
         }
-
+        #enables k8s native service discovery -  allows leader election and pod awarness
         service_registration "kubernetes" {}
 
-  # PVC settings
+  # PVC settings , controls pvc creation for raft data
   dataStorage:
-    enabled: true
+    enabled: true  #creates pvc per pod.  Raft data is ephemeral
     size: 8Gi
     storageClass: local-path
 
-ui:
-  enabled: true
+ui: #configures K8 service , not open bao
+  enabled: true   #creates service for the ui/api
   serviceType: NodePort
   serviceNodePort: 32100
 
