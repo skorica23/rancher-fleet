@@ -1,0 +1,21 @@
+defaultNamespace: openbao  #namespace where helm release will be installed
+redeployOnModify: true  #forces redeploy if  balues.yaml cahnges or git commit updates
+helm:  #controls helm behavior
+  # Name of the Helm release
+  releaseName: openbao-ha
+  takeOwnership: true   #fleet can adopt helm releases
+  atomic: true  #helm rolback on failure, prevents half installed OB clusters
+  # OpenBao official Helm chart
+  chart: openbao
+  repo: https://openbao.github.io/openbao-helm
+  # Optional: pin a version, or leave empty to track latest
+  # version: "0.19.3"
+
+  force: false  #avoids forced resource replacements, safer for statefullsets + PVCs
+  timeoutSeconds: 600   #time waits for pods ready, PVCs bound
+
+  valuesFiles: #injects your values.yaml
+    - values.yaml
+    
+  #vslues:
+   # fleetForceRedeploy: "2025-01-18-01"

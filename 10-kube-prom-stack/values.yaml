@@ -1,0 +1,26 @@
+prometheus:
+  prometheusSpec:
+    enableRemoteWriteReceiver: true
+    
+    storageSpec:   
+      volumeClaimTemplate::
+        spec:
+          storageClassName: local-path
+          accessModes: ["ReadWriteOnce"]
+          resources:
+            requests:
+              storage: 35Gi
+             
+grafana:
+  ingress:
+     enabled: true
+  ingressClassName: nginx
+  annotations:
+      #kubernetes.io/ingress.class: nginx
+      kubernetes.io/tls-acme: "true"
+      hosts:
+        - host: grafana.10.30.30.21.nip.io
+          paths:
+            - /
+
+    
