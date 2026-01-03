@@ -1,11 +1,12 @@
+
+namespace: monitoring
 defaultNamespace: monitoring
 
 
 helm:
-  
   releaseName: prometheus
   repo: https://prometheus-community.github.io/helm-charts
-  chart:  "prometheus-monitoring"
+  chart:  "kube-prometheus-stack"
 
 
   valuesFiles: 
