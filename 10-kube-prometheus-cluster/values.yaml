@@ -4,6 +4,9 @@
 prometheus:
   enabled: false
 
+prometheusOperator:
+  enabled: false
+
 grafana:
   enabled: false
 
