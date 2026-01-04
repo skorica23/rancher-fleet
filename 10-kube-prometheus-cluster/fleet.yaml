@@ -1,0 +1,12 @@
+#helm
+#install chart
+#applies cluster scoped resources
+
+helm:
+  releaseName: kube-prometheus-cluster
+  repo: https://prometheus-community.github.io/helm-charts
+  chart: kube-prometheus-stack
+
+
+valuesFiles:
+  values.yaml

@@ -1,0 +1,12 @@
+# fleet.yaml for 00-monitoring-namespace
+
+# Fleet’s default behavior is:
+
+#     Treat the directory as a bundle
+
+#     Apply all Kubernetes manifests in it
+
+#     Do not apply Helm logic unless told to
+
+#     Do not enforce namespace scoping unless told to
+

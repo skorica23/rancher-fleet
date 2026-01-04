@@ -1,21 +1,21 @@
-prometheus:
-  prometheusSpec:
-    enableRemoteWriteReceiver: true
+# prometheus:
+#   prometheusSpec:
+#     enableRemoteWriteReceiver: true
     
-    storageSpec:   
-      volumeClaimTemplate::
-        spec:
-          storageClassName: local-path
-          accessModes: ["ReadWriteOnce"]
-          resources:
-            requests:
-              storage: 35Gi
+#     storageSpec:   
+#       volumeClaimTemplate::
+#         spec:
+#           storageClassName: local-path
+#           accessModes: ["ReadWriteOnce"]
+#           resources:
+#             requests:
+#               storage: 35Gi
              
-grafana:
-  ingress:
-     enabled: true
-     hosts:
-       - grafana.10.30.30.21.nip.io
-     path: /
+# grafana:
+#   ingress:
+#      enabled: true
+#      hosts:
+#        - grafana.10.30.30.21.nip.io
+#      path: /
 
     

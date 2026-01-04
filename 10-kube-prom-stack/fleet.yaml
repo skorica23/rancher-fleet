@@ -1,16 +1,16 @@
 
-namespace: monitoring
-defaultNamespace: monitoring
+# namespace: monitoring   #this bundle is nmespace scoped, fleet must enforce namespace isolation
+# defaultNamespace: monitoring
 
 
-helm:
-  releaseName: prometheus
-  repo: https://prometheus-community.github.io/helm-charts
-  chart:  "kube-prometheus-stack"
+# helm:
+#   releaseName: prometheus
+#   repo: https://prometheus-community.github.io/helm-charts
+#   chart:  "kube-prometheus-stack"
 
 
-  valuesFiles: 
-   - values.yaml
+#   valuesFiles: 
+#    - values.yaml
 
 
 
