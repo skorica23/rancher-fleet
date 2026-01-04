@@ -17,6 +17,9 @@ kubeStateMetrics:
   enabled: false  
 
 
+windowsMonitoring:
+  enabled: false
+
 
 
 
