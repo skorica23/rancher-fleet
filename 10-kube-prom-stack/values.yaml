@@ -16,7 +16,6 @@ grafana:
      enabled: true
      hosts:
        - grafana.10.30.30.21.nip.io
-     paths:
-       - /
+     path: /
 
     
